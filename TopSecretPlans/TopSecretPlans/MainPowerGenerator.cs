@@ -8,7 +8,8 @@ namespace TopSecretPlans
 {
 	public class MainPowerGenerator : Reactor
 	{
-		public  int startupPowerLevel {
+		public int startupPowerLevel
+		{
 			private set
 			{
 				startupPowerLevel = value;
@@ -17,8 +18,18 @@ namespace TopSecretPlans
 			{
 				return startupPowerLevel;
 			}
-
-		};
+		}
+		public int maxPower
+		{
+			private set
+			{
+				maxPower = value;
+			}
+			get
+			{
+				return maxPower;
+			}
+		}
 		public MainPowerGenerator(int PowerRate, int startupPowerLevel)
 			: base(PowerRate)
 		{
