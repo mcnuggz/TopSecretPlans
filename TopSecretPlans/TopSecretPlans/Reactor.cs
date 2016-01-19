@@ -15,6 +15,7 @@ namespace TopSecretPlans
         }
         public int GeneratePower()
         {
+			PowerRate++;
             return PowerRate;
         }
     }
