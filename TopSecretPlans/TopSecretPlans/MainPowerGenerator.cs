@@ -38,10 +38,32 @@ namespace TopSecretPlans
 		}
 		public bool CanPowerUp()
 		{
-			if (this.startupPowerLevel >= this.PowerRate)
+			if (startupPowerLevel >= PowerRate)
 			{
 				return true;	
 			} else
+			{
+				return false;
+			}
+		}
+		public bool isAtMaxPower()
+		{
+			if (maxPower == PowerRate)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		public bool isOverHeated()
+		{
+			if (PowerRate > maxPower)
+			{
+				return true;
+			}
+			else
 			{
 				return false;
 			}
