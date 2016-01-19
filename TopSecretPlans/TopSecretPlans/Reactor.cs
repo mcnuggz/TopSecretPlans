@@ -8,7 +8,17 @@ namespace TopSecretPlans
 {
     public class Reactor
     {
-        public int PowerRate { get; private set; }
+        public int PowerRate
+		{
+			private set
+			{
+				PowerRate = value;
+			}
+			get
+			{
+				return PowerRate;
+			}
+		}
         private int InitialPowerPercent = 0;
         public int MaxPowerPercent = 100;
 

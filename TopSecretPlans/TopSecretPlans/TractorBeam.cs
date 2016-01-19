@@ -27,8 +27,8 @@ namespace TopSecretPlans
         public void Tractorbeamgeneratortower(int powerrate)
             
         {
-            TractorBeamLevel = 0;
-            
+            TractorBeamLevel = powerrate;
+                       
         }
 
         public void GenerateTractorBeam()
@@ -38,7 +38,8 @@ namespace TopSecretPlans
 
         public void CreateForce(int power, int direction)
         {
-            
+            Tractorbeamgeneratortower(power);
+            //Console.WriteLine($"Your tractor bean starts pulling with {power} at {direction} degrees");
         }
     }
 }

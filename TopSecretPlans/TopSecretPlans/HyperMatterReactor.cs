@@ -13,16 +13,19 @@ namespace TopSecretPlans
         public int StellarFuel = 124994;
         public int HyperMatterAmount;
 
-        public HyperMatterReactor(int PowerRate) : base(PowerRate)
+        public HyperMatterReactor(int HyperMatterRate, int HyperSpaceEnergy, int StellarFuel, int PowerRate)
+            :base(PowerRate)
         {
-
+            this.HyperMatterRate = HyperMatterRate;
+            this.HyperSpaceEnergy = HyperSpaceEnergy;
+            this.StellarFuel = StellarFuel;
+            HyperMatterAmount = HyperSpaceEnergy / HyperMatterRate * StellarFuel;
         }
         public int GenerateHyperMatter()
         {
-            HyperMatterAmount = HyperSpaceEnergy / HyperMatterRate * StellarFuel;
             return HyperMatterAmount;
         }
-
     }
-    }
+}    
+ 
 
