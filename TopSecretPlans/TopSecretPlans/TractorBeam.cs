@@ -8,10 +8,26 @@ namespace TopSecretPlans
 {
     public class TractorBeam : Reactor
     {
-        public int TractorBeamLevel;
-        public Tractorbeamgeneratortower(int powerrate)
+        public int TractorBeamLevel
         {
-            TractorBeamLevel = powerrate * 5;
+            private set
+            {
+                TractorBeamLevel = value;
+            }
+            get
+            {
+                return TractorBeamLevel;
+            }
+        }
+        public TractorBeam(int PowerRate, int TractorBeamLevel)
+            :base(PowerRate)
+        {
+            this.TractorBeamLevel = TractorBeamLevel;
+        }
+        public void Tractorbeamgeneratortower(int powerrate)
+            
+        {
+            TractorBeamLevel = 0;
             
         }
 
