@@ -18,7 +18,7 @@ namespace TopSecretPlans
         }
         public int GeneratePower()
         {
-            while(InitialPowerPercent < MaxPowerPercent)
+            if(InitialPowerPercent <= MaxPowerPercent)
             {
                 PowerRate++;
             }
