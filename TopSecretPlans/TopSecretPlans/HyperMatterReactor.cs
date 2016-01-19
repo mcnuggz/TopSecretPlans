@@ -8,9 +8,39 @@ namespace TopSecretPlans
 {
     public class HyperMatterReactor : Reactor
     {
-        public int HyperMatterRate = 2;
-        public int HyperSpaceEnergy = 1000;
-        public int StellarFuel = 124994;
+        public int HyperMatterRate
+        {
+            set
+            {
+                HyperMatterRate = value;
+            }
+            get
+            {
+                return HyperMatterRate;
+            }
+        }
+        public int HyperSpaceEnergy
+        {
+            set
+            {
+                HyperSpaceEnergy = value;
+            }
+            get
+            {
+                return HyperSpaceEnergy;
+            }
+        }
+        public int StellarFuel
+        {
+            set
+            {
+                StellarFuel = value;
+            }
+            get
+            {
+                return StellarFuel;
+            }
+        }
         public int HyperMatterAmount;
 
         public HyperMatterReactor(int HyperMatterRate, int HyperSpaceEnergy, int StellarFuel, int PowerRate)
