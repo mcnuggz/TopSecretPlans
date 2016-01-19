@@ -10,6 +10,8 @@ namespace TopSecretPlans
     {
         static void Main(string[] args)
         {
+            HyperMatterReactor hmr = new HyperMatterReactor(50);
+            
         }
     }
 }
