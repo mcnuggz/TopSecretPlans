@@ -30,10 +30,21 @@ namespace TopSecretPlans
 				return maxPower;
 			}
 		}
-		public MainPowerGenerator(int PowerRate, int startupPowerLevel)
+		public MainPowerGenerator(int PowerRate, int startupPowerLevel, int maxPower)
 			: base(PowerRate)
 		{
+			this.maxPower = maxPower;
 			this.startupPowerLevel = startupPowerLevel;
+		}
+		public bool CanPowerUp()
+		{
+			if (this.startupPowerLevel >= this.PowerRate)
+			{
+				return true;	
+			} else
+			{
+				return false;
+			}
 		}
 	}
 }
