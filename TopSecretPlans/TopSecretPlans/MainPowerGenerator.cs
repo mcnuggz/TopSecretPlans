@@ -8,21 +8,21 @@ namespace TopSecretPlans
 {
 	public class MainPowerGenerator : Reactor
 	{
-		public  int totalPower {
+		public  int startupPowerLevel {
 			private set
 			{
-				totalPower = value;
+				startupPowerLevel = value;
 			}
 			get
 			{
-				return totalPower;
+				return startupPowerLevel;
 			}
 
 		};
-		public MainPowerGenerator(int PowerRate, int totalPower)
+		public MainPowerGenerator(int PowerRate, int startupPowerLevel)
 			: base(PowerRate)
 		{
-			this.totalPower = totalPower;
+			this.startupPowerLevel = startupPowerLevel;
 		}
 	}
 }
