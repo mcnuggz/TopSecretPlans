@@ -9,6 +9,10 @@ namespace TopSecretPlans
     public class IonDriveReactor : Reactor
     {
         public int IonDriveRate = 4;
+        public IonDriveReactor(int PowerRate) : base(PowerRate) 
+        {
+
+        }
         public int ChargeIonDrive()
         {
             return PowerRate * IonDriveRate;
