@@ -8,8 +8,17 @@ namespace TopSecretPlans
 {
     public class Reactor
     {
-        public int PowerRate { get; private set; }
-        Reactor(int PowerRate)
+        public int PowerRate {
+			get
+			{
+				return PowerRate;
+			}
+			private set
+			{
+				PowerRate = value;
+			}
+			}
+        public Reactor(int PowerRate)
         {
             this.PowerRate = PowerRate;
         }

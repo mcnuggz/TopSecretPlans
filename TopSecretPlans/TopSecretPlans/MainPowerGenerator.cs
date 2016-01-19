@@ -10,7 +10,7 @@ namespace TopSecretPlans
 	{
 		public MainPowerGenerator(int PowerRate)
 		{
-			base.PowerRate = PowerRate;
+			this.PowerRate = PowerRate;
 		}
 	}
 }
