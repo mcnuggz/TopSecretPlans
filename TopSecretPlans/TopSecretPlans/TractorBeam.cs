@@ -9,15 +9,10 @@ namespace TopSecretPlans
     public class TractorBeam : Reactor
     {
         public int TractorBeamLevel;
-        public TractorBeam()
+        public Tractorbeamgeneratortower(int powerrate)
         {
-
-        }
-
-        public void Tractorbeamgeneratortower()
-        {
-            TractorBeamLevel = 0;
-            Console.WriteLine("The Generator is at" + TractorBeamLevel);
+            TractorBeamLevel = powerrate * 5;
+            
         }
 
         public void GenerateTractorBeam()
@@ -27,10 +22,7 @@ namespace TopSecretPlans
 
         public void CreateForce(int power, int direction)
         {
-            CreateForce = TractorBeamLevel + GenerateTractorBeam;
-            power = 10;
-            direction = right;
-
+            
         }
     }
 }
