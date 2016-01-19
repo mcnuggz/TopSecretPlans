@@ -12,7 +12,7 @@ namespace TopSecretPlans
         private int InitialPowerPercent = 0;
         public int MaxPowerPercent = 100;
 
-        protected Reactor(int PowerRate)
+        public Reactor(int PowerRate)
         {
             this.PowerRate = PowerRate;
         }
