@@ -6,42 +6,12 @@ using System.Threading.Tasks;
 
 namespace TopSecretPlans
 {
-    public class HyperMatterReactor : Reactor
+    public class HyperMatterReactor : Reactor, IActivate
     {
-        public int HyperMatterRate
-        {
-            set
-            {
-                HyperMatterRate = value;
-            }
-            get
-            {
-                return HyperMatterRate;
-            }
-        }
-        public int HyperSpaceEnergy
-        {
-            set
-            {
-                HyperSpaceEnergy = value;
-            }
-            get
-            {
-                return HyperSpaceEnergy;
-            }
-        }
-        public int StellarFuel
-        {
-            set
-            {
-                StellarFuel = value;
-            }
-            get
-            {
-                return StellarFuel;
-            }
-        }
-        public int HyperMatterAmount;
+        private int HyperMatterRate = 3;
+        private int HyperSpaceEnergy { get; set; }
+        private int StellarFuel { get; set; }
+        private int HyperMatterAmount;
 
         public HyperMatterReactor(int HyperMatterRate, int HyperSpaceEnergy, int StellarFuel, int PowerRate)
             :base(PowerRate)
@@ -49,11 +19,24 @@ namespace TopSecretPlans
             this.HyperMatterRate = HyperMatterRate;
             this.HyperSpaceEnergy = HyperSpaceEnergy;
             this.StellarFuel = StellarFuel;
-            HyperMatterAmount = HyperSpaceEnergy / HyperMatterRate * StellarFuel;
+            
         }
-        public int GenerateHyperMatter()
+        private int GenerateHyperMatter()
         {
-            return HyperMatterAmount;
+            return HyperMatterAmount = HyperSpaceEnergy / HyperMatterRate * StellarFuel;
+        }
+        private int ShutDown()
+        {
+            return HyperMatterAmount--;
+        }
+        public void Activate()
+        {
+            GenerateHyperMatter();
+        }
+
+        public void Refresh()
+        {
+            ShutDown();
         }
     }
 }    

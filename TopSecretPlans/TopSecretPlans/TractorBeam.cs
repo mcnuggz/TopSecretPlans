@@ -6,40 +6,30 @@ using System.Threading.Tasks;
 
 namespace TopSecretPlans
 {
-    public class TractorBeam : Reactor
+    public class TractorBeam : Reactor, IActivate 
     {
-        public int TractorBeamLevel
-        {
-            private set
-            {
-                TractorBeamLevel = value;
-            }
-            get
-            {
-                return TractorBeamLevel;
-            }
-        }
-        public TractorBeam(int PowerRate, int TractorBeamLevel)
-            :base(PowerRate)
+        public int TractorBeamLevel { get; private set; }
+        public TractorBeam(int PowerRate, int TractorBeamLevel) :base(PowerRate)
         {
             this.TractorBeamLevel = TractorBeamLevel;
         }
-        public void Tractorbeamgeneratortower(int powerrate)
-            
-        {
-            TractorBeamLevel = powerrate;
-                       
-        }
 
-        public void GenerateTractorBeam()
+        private void GenerateTractorBeam()
         {
             TractorBeamLevel++;
         }
-
-        public void CreateForce(int power, int direction)
+        private void DeactivateTractorBeam()
         {
-            Tractorbeamgeneratortower(power);
-            //Console.WriteLine($"Your tractor bean starts pulling with {power} at {direction} degrees");
+            TractorBeamLevel--;
+        }
+        public void Activate()
+        {
+            GenerateTractorBeam();
+        }
+
+        public void Refresh()
+        {
+            DeactivateTractorBeam();
         }
     }
 }

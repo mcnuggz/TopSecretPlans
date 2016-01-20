@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace TopSecretPlans
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            HyperMatterReactor hmr = new HyperMatterReactor(50);
             
         }
     }

@@ -6,37 +6,30 @@ using System.Threading.Tasks;
 
 namespace TopSecretPlans
 {
-	public class MainPowerGenerator : Reactor
+	public class MainPowerGenerator : Reactor, IActivate
 	{
-		public int startupPowerLevel
-		{
-			private set
-			{
-				startupPowerLevel = value;
-			}
-			get
-			{
-				return startupPowerLevel;
-			}
-		}
-		public int maxPower
-		{
-			private set
-			{
-				maxPower = value;
-			}
-			get
-			{
-				return maxPower;
-			}
-		}
-		public MainPowerGenerator(int PowerRate, int startupPowerLevel, int maxPower)
-			: base(PowerRate)
+        public int startupPowerLevel = 0;
+        private int maxPower;
+
+		public MainPowerGenerator(int PowerRate, int startupPowerLevel, int maxPower) : base(PowerRate)
 		{
 			this.maxPower = maxPower;
 			this.startupPowerLevel = startupPowerLevel;
 		}
-		public bool CanPowerUp()
+
+        public void Activate()
+        {
+            CanPowerUp();
+            isAtMaxPower();
+            isOverHeated();
+        }
+
+        public void Refresh()
+        {
+            maxPower = 0;
+        }
+
+        private bool CanPowerUp()
 		{
 			if (startupPowerLevel >= PowerRate)
 			{
@@ -46,7 +39,7 @@ namespace TopSecretPlans
 				return false;
 			}
 		}
-		public bool isAtMaxPower()
+		private bool isAtMaxPower()
 		{
 			if (maxPower == PowerRate)
 			{
@@ -57,7 +50,7 @@ namespace TopSecretPlans
 				return false;
 			}
 		}
-		public bool isOverHeated()
+		private bool isOverHeated()
 		{
 			if (PowerRate > maxPower)
 			{

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace TopSecretPlans
 {
-	class ForceFieldGenreator
-	{
-	}
+    interface IActivate
+    {
+        void Activate();
+        void Refresh();
+    }
 }
